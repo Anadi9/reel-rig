@@ -1,0 +1,99 @@
+1
+00:00:00,000 --> 00:00:02,200
+I didn't draw a single line of this guy.
+
+2
+00:00:02,200 --> 00:00:03,200
+No Figma.
+
+3
+00:00:03,200 --> 00:00:04,200
+No designer.
+
+4
+00:00:04,200 --> 00:00:05,200
+Zero dollars.
+
+5
+00:00:05,200 --> 00:00:06,600
+Just Claude Opus 5.5.
+
+6
+00:00:06,600 --> 00:00:08,040
+And it took four tries.
+
+7
+00:00:08,040 --> 00:00:09,040
+Try one.
+
+8
+00:00:09,040 --> 00:00:10,520
+A cute 3D toy version of me.
+
+9
+00:00:10,520 --> 00:00:11,520
+Nope.
+
+10
+00:00:11,520 --> 00:00:12,520
+Too cute.
+
+11
+00:00:12,520 --> 00:00:13,520
+Try two.
+
+12
+00:00:13,520 --> 00:00:14,520
+Realistic character sheets.
+
+13
+00:00:14,520 --> 00:00:15,520
+Looked great.
+
+14
+00:00:15,520 --> 00:00:17,200
+Then my free chat GPT limit ran out.
+
+15
+00:00:17,200 --> 00:00:18,200
+Try three.
+
+16
+00:00:18,200 --> 00:00:21,920
+Claude cut me out of those tiny images, blurriages, and my shoes.
+
+17
+00:00:21,920 --> 00:00:22,920
+Just gone.
+
+18
+00:00:22,920 --> 00:00:26,400
+So Claude said, the images aren't the problem, the method is, and rebuilt me
+
+19
+00:00:26,400 --> 00:00:27,400
+from scratch.
+
+20
+00:00:27,400 --> 00:00:31,880
+And code, 600 lines, real joints, elbows that bend on their own.
+
+21
+00:00:31,880 --> 00:00:35,280
+He breathes, he shifts his weight, he lip syncs to my voice.
+
+22
+00:00:35,280 --> 00:00:36,280
+Try four.
+
+23
+00:00:36,280 --> 00:00:37,920
+This is the one talking to you right now.
+
+24
+00:00:37,920 --> 00:00:40,080
+Follow, and watch what he does next.
+
+25
+00:00:40,080 --> 00:00:42,360
+And no, I still haven't drawn a single line.

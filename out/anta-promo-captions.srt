@@ -1,0 +1,23 @@
+1
+00:00:00,000 --> 00:00:03,000
+Still deciding between hiring... or shipping?
+
+2
+00:00:03,000 --> 00:00:06,200
+ANTA builds production-ready AI systems for your existing stack.
+
+3
+00:00:06,200 --> 00:00:09,200
+HubSpot. Salesforce. Slack. No rip-and-replace.
+
+4
+00:00:09,200 --> 00:00:12,200
+One live call. Real architecture. No forms.
+
+5
+00:00:12,200 --> 00:00:15,000
+We ship the system. You skip the hire.
+
+6
+00:00:15,000 --> 00:00:18,000
+ANTA — book a live scoping call. theanta.com

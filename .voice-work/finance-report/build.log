@@ -1,0 +1,49 @@
+
+=== hook  5.573s  (167 frames)
+   chunk  0    0.000s  -> +   0 frames
+   chunk  1    4.014s  -> + 120 frames
+   chunk  2    5.566s  -> + 167 frames
+
+=== pattern  12.725s  (382 frames)
+   chunk  0    0.000s  -> +   0 frames
+   chunk  1    1.605s  -> +  48 frames
+   chunk  2    3.336s  -> + 100 frames
+   chunk  3    4.848s  -> + 145 frames
+   chunk  4    6.581s  -> + 197 frames
+   chunk  5   10.052s  -> + 302 frames
+   chunk  6   12.725s  -> + 382 frames
+
+=== breaks  13.839s  (415 frames)
+   chunk  0    0.000s  -> +   0 frames
+   chunk  1    2.760s  -> +  83 frames
+   chunk  2    4.891s  -> + 147 frames
+   chunk  3    6.301s  -> + 189 frames
+   chunk  4    8.122s  -> + 244 frames
+   chunk  5   10.667s  -> + 320 frames
+   chunk  6   12.466s  -> + 374 frames
+   chunk  7   13.839s  -> + 415 frames
+
+=== fix  16.347s  (490 frames)
+   chunk  0    0.000s  -> +   0 frames
+   chunk  1    0.183s  -> +   5 frames
+   chunk  2    3.080s  -> +  92 frames
+   chunk  3    5.061s  -> + 152 frames
+   chunk  4    6.776s  -> + 203 frames
+   chunk  5    9.831s  -> + 295 frames
+   chunk  6   11.566s  -> + 347 frames
+   chunk  7   12.863s  -> + 386 frames
+   chunk  8   16.347s  -> + 490 frames
+
+=== cta  7.477s  (224 frames)
+   chunk  0    0.000s  -> +   0 frames
+   chunk  1    2.981s  -> +  89 frames
+   chunk  2    5.386s  -> + 162 frames
+Detected language: en (p=1.00)
+Wrote 12 caption cues to /Users/anadithakur/reel-rig/remotion/public/finance-report/captions.json
+Total narration: 55.96s (1679 frames)
+  hook       0.00s ->   5.57s
+  pattern    5.57s ->  18.30s
+  breaks    18.30s ->  32.14s
+  fix       32.14s ->  48.48s
+  cta       48.48s ->  55.96s
+Wrote /Users/anadithakur/reel-rig/remotion/public/finance-report/props.json

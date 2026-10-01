@@ -1,0 +1,63 @@
+1
+00:00:00,000 --> 00:00:03,080
+But everyone in that meeting was lying, including you.
+
+2
+00:00:03,080 --> 00:00:08,080
+Someone said, Context window, the whole room nodded, almost nobody knew what it meant.
+
+3
+00:00:08,080 --> 00:00:11,120
+And that nod is how broken AI products get built.
+
+4
+00:00:11,120 --> 00:00:13,640
+Nobody asks, so the team builds on a guess.
+
+5
+00:00:13,640 --> 00:00:15,800
+Someone assumes the AI remembers everything.
+
+6
+00:00:15,800 --> 00:00:16,800
+It doesn't.
+
+7
+00:00:16,800 --> 00:00:20,640
+Weeks later, users complain it forgot what they said five minutes ago, and nobody
+
+8
+00:00:20,640 --> 00:00:21,640
+knows why.
+
+9
+00:00:21,640 --> 00:00:27,600
+Pop quiz, what's a Context window, three seconds.
+
+10
+00:00:27,600 --> 00:00:29,980
+It's how much the AI can hold in its head at once.
+
+11
+00:00:29,980 --> 00:00:33,180
+It's short-term memory, one sentence, that's all it ever was.
+
+12
+00:00:33,180 --> 00:00:37,220
+The person who asks, wait, what does that mean, isn't the slowest in the room, they're
+
+13
+00:00:37,220 --> 00:00:39,060
+the only one not guessing.
+
+14
+00:00:39,060 --> 00:00:44,020
+Want the other 24, comment jargon, and I'll send you all 25 AI words, each explained
+
+15
+00:00:44,020 --> 00:00:45,180
+in one line.
+
+16
+00:00:45,180 --> 00:00:46,100
+No lying this time.

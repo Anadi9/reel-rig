@@ -1,0 +1,62 @@
+# Character v2 pose manifest: the single list of poses. build_character.py reads this.
+#
+#   sheet   key from `sheets` below
+#   cell    [row, col], 1-based, in that sheet's grid
+#   mouth   [x, y] in sheet pixels, measured on zoomed crops. For poses that can't talk it's still the face point used to
+#           place and scale the figure.
+#   talks   lip-sync mouths are drawn on this pose
+#   head    split = own head layer (tilt/nod/turn) · fixed = upper body moves as one (hand on face)
+#   stance  stand = mouth aligned to the shared mouth point · walk/sit/crouch = feet on the
+#           baseline, scaled by head size, not mouth-aligned
+# Optional overrides after a review board: neck [x, y] (canvas px), lenses [[x, y, r], [x, y, r]]
+# (canvas px).
+
+# bg_tol: background tolerance for the cut-out (default 14, what the v1 sheets need)
+sheets:
+  s1: {file: sheets/sheet1_full.jpg, grid: [3, 2]}
+  s2: {file: sheets/sheet2_full.jpg, grid: [3, 2]}
+  s3: {file: sheets/sheet3_mixed_6x4.webp, grid: [6, 4], bg_tol: 10}
+  s4: {file: sheets/sheet4_full_8x3.webp, grid: [8, 3], bg_tol: 5}
+
+poses:
+  # ── kept from v1 ──
+  idle:          {sheet: s1, cell: [1, 1], mouth: [342, 90],  talks: true,  head: split, stance: stand}
+  talk:          {sheet: s1, cell: [1, 2], mouth: [764, 90], talks: true,  head: split, stance: stand}
+  point_up:      {sheet: s1, cell: [1, 3], mouth: [1146, 89],  talks: true,  head: split, stance: stand}
+  hold_paper:    {sheet: s1, cell: [2, 1], mouth: [338, 596], talks: true,  head: split, stance: stand}
+  point_down:    {sheet: s1, cell: [2, 2], mouth: [759, 593], talks: true,  head: split, stance: stand}
+  wave:          {sheet: s1, cell: [2, 3], mouth: [1172, 596], talks: true,  head: split, stance: stand}
+  mind_blown:    {sheet: s2, cell: [2, 2], mouth: [765, 589], talks: false, head: fixed, stance: stand}
+
+  # ── replaced by sheet 4 art (same names) ──
+  laptop:        {sheet: s4, cell: [1, 1], mouth: [100, 69],  talks: true,  head: split, stance: stand}
+  phone:         {sheet: s4, cell: [1, 2], mouth: [294, 69],  talks: true,  head: split, stance: stand}
+  facepalm:      {sheet: s4, cell: [1, 3], mouth: [461, 75],  talks: true,  head: fixed, stance: stand}
+  thumbs_up:     {sheet: s4, cell: [1, 4], mouth: [665, 69],  talks: true,  head: split, stance: stand}
+  shrug:         {sheet: s4, cell: [1, 6], mouth: [1049, 75], talks: true,  head: split, stance: stand}
+
+  # ── new, sheet 4 ──
+  arms_crossed:  {sheet: s4, cell: [1, 5], mouth: [849, 67],  talks: true,  head: split, stance: stand}
+  point_side:    {sheet: s4, cell: [1, 7], mouth: [1251, 69],  talks: false, head: split, stance: stand}
+  lean:          {sheet: s4, cell: [1, 8], mouth: [1447, 65],  talks: true,  head: split, stance: stand}
+  walk_a:        {sheet: s4, cell: [2, 1], mouth: [77, 406],  talks: false, head: split, stance: walk}
+  coffee:        {sheet: s4, cell: [2, 2], mouth: [288, 408],  talks: false, head: fixed, stance: stand}
+  laptop_look:   {sheet: s4, cell: [2, 3], mouth: [468, 412],  talks: true,  head: split, stance: stand}
+  air_quotes:    {sheet: s4, cell: [2, 4], mouth: [658, 409],  talks: true,  head: split, stance: stand}
+  point_up_both: {sheet: s4, cell: [2, 5], mouth: [857, 405],  talks: true,  head: split, stance: stand}
+  phone_call:    {sheet: s4, cell: [2, 6], mouth: [1047, 415],  talks: true,  head: fixed, stance: stand}
+  relaxed:       {sheet: s4, cell: [2, 7], mouth: [1236, 409],  talks: true,  head: fixed, stance: stand}
+  lean_crossed:  {sheet: s4, cell: [2, 8], mouth: [1439, 410],  talks: true,  head: split, stance: stand}
+  jog:           {sheet: s4, cell: [3, 1], mouth: [103, 745],  talks: false, head: split, stance: walk}
+  crouch_think:  {sheet: s4, cell: [3, 2], mouth: [309, 800],  talks: false, head: fixed, stance: crouch}
+  tablet:        {sheet: s4, cell: [3, 3], mouth: [491, 747],  talks: true,  head: split, stance: stand}
+  finger_guns:   {sheet: s4, cell: [3, 4], mouth: [667, 748],  talks: true,  head: split, stance: stand}
+  celebrate:     {sheet: s4, cell: [3, 5], mouth: [867, 751],  talks: true,  head: split, stance: stand}
+  present:       {sheet: s4, cell: [3, 6], mouth: [1072, 750], talks: true,  head: split, stance: stand}
+  idle_pockets:  {sheet: s4, cell: [3, 7], mouth: [1259, 750],  talks: true,  head: split, stance: stand}
+  back:          {sheet: s4, cell: [3, 8], mouth: [1468, 741],  talks: false, head: fixed, stance: walk}
+
+  # ── new, sheet 3 (its only full-body figures) ──
+  sit:           {sheet: s3, cell: [2, 1], mouth: [131, 360],  talks: true,  head: split, stance: sit}
+  walk_b:        {sheet: s3, cell: [3, 6], mouth: [1412, 596],  talks: false, head: split, stance: walk}
+  sit_laptop:    {sheet: s3, cell: [4, 3], mouth: [634, 883],  talks: true,  head: split, stance: sit}

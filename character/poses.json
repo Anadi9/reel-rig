@@ -1,0 +1,392 @@
+{
+ "poses": [
+  "idle",
+  "talk",
+  "point_up",
+  "hold_paper",
+  "point_down",
+  "wave",
+  "mind_blown",
+  "laptop",
+  "phone",
+  "facepalm",
+  "thumbs_up",
+  "shrug",
+  "arms_crossed",
+  "point_side",
+  "lean",
+  "walk_a",
+  "coffee",
+  "laptop_look",
+  "air_quotes",
+  "point_up_both",
+  "phone_call",
+  "relaxed",
+  "lean_crossed",
+  "jog",
+  "crouch_think",
+  "tablet",
+  "finger_guns",
+  "celebrate",
+  "present",
+  "idle_pockets",
+  "back",
+  "sit",
+  "walk_b",
+  "sit_laptop"
+ ],
+ "canvas": [
+  540,
+  560
+ ],
+ "grid": [
+  270,
+  280
+ ],
+ "mouth": [
+  270,
+  121
+ ],
+ "meta": {
+  "idle": {
+   "mouth": [
+    270,
+    121
+   ],
+   "talks": true,
+   "head": "split",
+   "stance": "stand",
+   "scale": 1.0
+  },
+  "talk": {
+   "mouth": [
+    272,
+    121
+   ],
+   "talks": true,
+   "head": "split",
+   "stance": "stand",
+   "scale": 1.0
+  },
+  "point_up": {
+   "mouth": [
+    264,
+    121
+   ],
+   "talks": true,
+   "head": "split",
+   "stance": "stand",
+   "scale": 1.0
+  },
+  "hold_paper": {
+   "mouth": [
+    272,
+    121
+   ],
+   "talks": true,
+   "head": "split",
+   "stance": "stand",
+   "scale": 1.0364
+  },
+  "point_down": {
+   "mouth": [
+    270,
+    121
+   ],
+   "talks": true,
+   "head": "split",
+   "stance": "stand",
+   "scale": 1.0289
+  },
+  "wave": {
+   "mouth": [
+    272,
+    121
+   ],
+   "talks": true,
+   "head": "split",
+   "stance": "stand",
+   "scale": 1.0364
+  },
+  "mind_blown": {
+   "mouth": [
+    266,
+    121
+   ],
+   "talks": false,
+   "head": "fixed",
+   "stance": "stand",
+   "scale": 1.0339
+  },
+  "laptop": {
+   "mouth": [
+    265,
+    104
+   ],
+   "talks": true,
+   "head": "split",
+   "stance": "stand",
+   "scale": 1.5944
+  },
+  "phone": {
+   "mouth": [
+    265,
+    102
+   ],
+   "talks": true,
+   "head": "split",
+   "stance": "stand",
+   "scale": 1.5944
+  },
+  "facepalm": {
+   "mouth": [
+    264,
+    110
+   ],
+   "talks": true,
+   "head": "fixed",
+   "stance": "stand",
+   "scale": 1.5944
+  },
+  "thumbs_up": {
+   "mouth": [
+    264,
+    100
+   ],
+   "talks": true,
+   "head": "split",
+   "stance": "stand",
+   "scale": 1.5944
+  },
+  "shrug": {
+   "mouth": [
+    269,
+    104
+   ],
+   "talks": true,
+   "head": "split",
+   "stance": "stand",
+   "scale": 1.5944
+  },
+  "arms_crossed": {
+   "mouth": [
+    264,
+    94
+   ],
+   "talks": true,
+   "head": "split",
+   "stance": "stand",
+   "scale": 1.5944
+  },
+  "point_side": {
+   "mouth": [
+    276,
+    100
+   ],
+   "talks": false,
+   "head": "split",
+   "stance": "stand",
+   "scale": 1.5944
+  },
+  "lean": {
+   "mouth": [
+    264,
+    95
+   ],
+   "talks": true,
+   "head": "split",
+   "stance": "stand",
+   "scale": 1.5944
+  },
+  "walk_a": {
+   "mouth": [
+    237,
+    124
+   ],
+   "talks": false,
+   "head": "split",
+   "stance": "walk",
+   "scale": 1.5755
+  },
+  "coffee": {
+   "mouth": [
+    268,
+    101
+   ],
+   "talks": false,
+   "head": "fixed",
+   "stance": "stand",
+   "scale": 1.5755
+  },
+  "laptop_look": {
+   "mouth": [
+    264,
+    105
+   ],
+   "talks": true,
+   "head": "split",
+   "stance": "stand",
+   "scale": 1.5755
+  },
+  "air_quotes": {
+   "mouth": [
+    266,
+    99
+   ],
+   "talks": true,
+   "head": "split",
+   "stance": "stand",
+   "scale": 1.5755
+  },
+  "point_up_both": {
+   "mouth": [
+    271,
+    89
+   ],
+   "talks": true,
+   "head": "split",
+   "stance": "stand",
+   "scale": 1.5755
+  },
+  "phone_call": {
+   "mouth": [
+    264,
+    108
+   ],
+   "talks": true,
+   "head": "fixed",
+   "stance": "stand",
+   "scale": 1.5755
+  },
+  "relaxed": {
+   "mouth": [
+    264,
+    98
+   ],
+   "talks": true,
+   "head": "fixed",
+   "stance": "stand",
+   "scale": 1.5755
+  },
+  "lean_crossed": {
+   "mouth": [
+    264,
+    107
+   ],
+   "talks": true,
+   "head": "split",
+   "stance": "stand",
+   "scale": 1.5755
+  },
+  "jog": {
+   "mouth": [
+    232,
+    126
+   ],
+   "talks": false,
+   "head": "split",
+   "stance": "walk",
+   "scale": 1.6542
+  },
+  "crouch_think": {
+   "mouth": [
+    270,
+    245
+   ],
+   "talks": false,
+   "head": "fixed",
+   "stance": "crouch",
+   "scale": 1.6542
+  },
+  "tablet": {
+   "mouth": [
+    266,
+    122
+   ],
+   "talks": true,
+   "head": "split",
+   "stance": "stand",
+   "scale": 1.6542
+  },
+  "finger_guns": {
+   "mouth": [
+    264,
+    123
+   ],
+   "talks": true,
+   "head": "split",
+   "stance": "stand",
+   "scale": 1.6542
+  },
+  "celebrate": {
+   "mouth": [
+    270,
+    128
+   ],
+   "talks": true,
+   "head": "split",
+   "stance": "stand",
+   "scale": 1.6542
+  },
+  "present": {
+   "mouth": [
+    264,
+    125
+   ],
+   "talks": true,
+   "head": "split",
+   "stance": "stand",
+   "scale": 1.6542
+  },
+  "idle_pockets": {
+   "mouth": [
+    264,
+    128
+   ],
+   "talks": true,
+   "head": "split",
+   "stance": "stand",
+   "scale": 1.6542
+  },
+  "back": {
+   "mouth": [
+    338,
+    128
+   ],
+   "talks": false,
+   "head": "fixed",
+   "stance": "walk",
+   "scale": 1.6542
+  },
+  "sit": {
+   "mouth": [
+    270,
+    286
+   ],
+   "talks": true,
+   "head": "split",
+   "stance": "sit",
+   "scale": 1.2254
+  },
+  "walk_b": {
+   "mouth": [
+    315,
+    121
+   ],
+   "talks": false,
+   "head": "split",
+   "stance": "walk",
+   "scale": 2.0051
+  },
+  "sit_laptop": {
+   "mouth": [
+    270,
+    389
+   ],
+   "talks": true,
+   "head": "split",
+   "stance": "sit",
+   "scale": 1.1816
+  }
+ }
+}

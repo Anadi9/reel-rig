@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "lazy-frames": "^0.6.3",
+    "remotion": "^4.0.515"
+  }
+}

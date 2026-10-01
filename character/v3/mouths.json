@@ -1,0 +1,133 @@
+{
+ "visemes": [
+  "rest",
+  "a1",
+  "a2",
+  "a3",
+  "e1",
+  "e2",
+  "o1",
+  "o2"
+ ],
+ "poses": {
+  "idle": {
+   "centre": [
+    270,
+    121
+   ],
+   "overlays": true
+  },
+  "front": {
+   "centre": [
+    276,
+    121
+   ],
+   "overlays": true
+  },
+  "side_left": {
+   "centre": [
+    247,
+    122
+   ],
+   "overlays": false
+  },
+  "back": {
+   "centre": [
+    269,
+    124
+   ],
+   "overlays": false
+  },
+  "side_right": {
+   "centre": [
+    295,
+    124
+   ],
+   "overlays": false
+  },
+  "relaxed": {
+   "centre": [
+    276,
+    131
+   ],
+   "overlays": true
+  },
+  "side_look": {
+   "centre": [
+    235,
+    152
+   ],
+   "overlays": false
+  },
+  "arms_crossed": {
+   "centre": [
+    276,
+    121
+   ],
+   "overlays": true
+  },
+  "back_bag": {
+   "centre": [
+    258,
+    127
+   ],
+   "overlays": false
+  },
+  "squat": {
+   "centre": [
+    270,
+    245
+   ],
+   "overlays": true
+  },
+  "sit": {
+   "centre": [
+    270,
+    179
+   ],
+   "overlays": false
+  },
+  "point_you": {
+   "centre": [
+    276,
+    121
+   ],
+   "overlays": true
+  },
+  "thumbs_up": {
+   "centre": [
+    276,
+    121
+   ],
+   "overlays": true
+  },
+  "peace": {
+   "centre": [
+    276,
+    121
+   ],
+   "overlays": true
+  },
+  "laptop": {
+   "centre": [
+    275,
+    123
+   ],
+   "overlays": true
+  },
+  "coffee": {
+   "centre": [
+    276,
+    121
+   ],
+   "overlays": false
+  },
+  "look_up": {
+   "centre": [
+    275,
+    123
+   ],
+   "overlays": false
+  }
+ }
+}

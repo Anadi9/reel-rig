@@ -1,0 +1,5 @@
+file 'base_hook.wav'
+file 'base_pain.wav'
+file 'base_setup.wav'
+file 'base_payoff.wav'
+file 'base_cta.wav'

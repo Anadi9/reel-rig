@@ -1,0 +1,98 @@
+{
+ "visemes": [
+  "rest",
+  "a1",
+  "a2",
+  "a3",
+  "e1",
+  "e2",
+  "o1",
+  "o2"
+ ],
+ "poses": {
+  "idle": {
+   "centre": [
+    270,
+    121
+   ],
+   "overlays": true
+  },
+  "talk": {
+   "centre": [
+    269,
+    121
+   ],
+   "overlays": true
+  },
+  "point_up": {
+   "centre": [
+    270,
+    121
+   ],
+   "overlays": true
+  },
+  "hold_paper": {
+   "centre": [
+    283,
+    136
+   ],
+   "overlays": true
+  },
+  "point_down": {
+   "centre": [
+    269,
+    133
+   ],
+   "overlays": true
+  },
+  "wave": {
+   "centre": [
+    277,
+    136
+   ],
+   "overlays": true
+  },
+  "laptop": {
+   "centre": [
+    265,
+    120
+   ],
+   "overlays": true
+  },
+  "phone": {
+   "centre": [
+    266,
+    122
+   ],
+   "overlays": true
+  },
+  "facepalm": {
+   "centre": [
+    272,
+    129
+   ],
+   "overlays": true
+  },
+  "shrug": {
+   "centre": [
+    265,
+    127
+   ],
+   "overlays": true
+  },
+  "mind_blown": {
+   "centre": [
+    267,
+    135
+   ],
+   "overlays": false
+  },
+  "thumbs_up": {
+   "centre": [
+    266,
+    136
+   ],
+   "overlays": true
+  }
+ }
+}
