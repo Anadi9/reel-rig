@@ -11,6 +11,8 @@ import TIMING from "./timing.json";
 import { Check, DOT_COLORS, DotChar, GrokChar, INK, Jolly, LIME, Logo, PAPER, Robot } from "./marks";
 
 export const FPS = 30;
+/** The on-screen handle differs per platform: Instagram cut vs X cut. */
+const Handle = React.createContext("@THE.ANADI");
 type Seg = (typeof TIMING.segments)[number];
 const SEGS = TIMING.segments as Seg[];
 const seg = (id: string) => SEGS.find((s) => s.id === id)!;
@@ -503,6 +505,7 @@ const ScoreScene: React.FC = () => {
 
 const EndScene: React.FC = () => {
   const frame = useCurrentFrame();
+  const handle = React.useContext(Handle);
   const base = sceneStart("end");
   const whoAt = cueAt("g1", "who", base) - 4;
   const labels = ["GROK BOT", "MUSE", "DOTS"];
@@ -520,7 +523,7 @@ const EndScene: React.FC = () => {
       </div>
       <div style={{ position: "absolute", left: 580, top: 1340, width: 360, display: "flex", flexDirection: "column", alignItems: "flex-start", gap: 18, opacity: fade(frame, whoAt + 10) }}>
         <div style={{ fontFamily: JERSEY, fontSize: 60, color: INK, whiteSpace: "nowrap" }}>COMMENT BELOW ↓</div>
-        <div style={{ fontFamily: SILK, fontSize: 26, background: INK, color: LIME, padding: "10px 16px" }}>@THE.ANADI</div>
+        <div style={{ fontFamily: SILK, fontSize: 26, background: INK, color: LIME, padding: "10px 16px" }}>{handle}</div>
       </div>
     </AbsoluteFill>
   );
@@ -573,12 +576,12 @@ export const AgentsV2Landscape: React.FC = () => {
   return (
     <AbsoluteFill style={{ background: dark ? INK : PAPER }}>
       <div style={{ position: "absolute", left: 840, top: 0, width: 1080, height: 1080, overflow: "hidden" }}>
-        <div style={{ position: "absolute", left: 0, top: -BAND_TOP, width: 1080, height: 1920 }}><Stage /></div>
+        <div style={{ position: "absolute", left: 0, top: -BAND_TOP, width: 1080, height: 1920 }}><Handle.Provider value="@ANADI_THAKUR"><Stage /></Handle.Provider></div>
       </div>
       <div style={{ position: "absolute", left: 836, top: 60, width: 4, height: 960, background: dark ? PAPER : INK, opacity: 0.12 }} />
       <Captions box={{ left: 64, top: 64, width: 720, fontSize: 76 }} />
       <Narrator pos={{ left: 150, top: 470, width: 520 }} />
-      <div style={{ position: "absolute", left: 64, top: 1010, fontFamily: SILK, fontSize: 22, padding: "6px 12px", background: dark ? PAPER : INK, color: dark ? INK : LIME }}>@THE.ANADI · AI NEWS</div>
+      <div style={{ position: "absolute", left: 64, top: 1010, fontFamily: SILK, fontSize: 22, padding: "6px 12px", background: dark ? PAPER : INK, color: dark ? INK : LIME }}>@ANADI_THAKUR · AI NEWS</div>
       <Audio src={staticFile("vo.wav")} />
     </AbsoluteFill>
   );
