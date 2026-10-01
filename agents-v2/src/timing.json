@@ -1,0 +1,298 @@
+{
+ "total": 58.082,
+ "segments": [
+  {
+   "id": "h1",
+   "scene": "hook",
+   "start": 0.25,
+   "end": 2.956,
+   "chunks": [
+    {
+     "text": "It's cute. It's cuddly.",
+     "start": 0.25,
+     "end": 1.523
+    },
+    {
+     "text": "And it wants your data.",
+     "start": 1.523,
+     "end": 2.956
+    }
+   ]
+  },
+  {
+   "id": "h2",
+   "scene": "hook",
+   "start": 3.256,
+   "end": 5.588,
+   "chunks": [
+    {
+     "text": "That's a real headline.",
+     "start": 3.256,
+     "end": 4.567
+    },
+    {
+     "text": "About an AI agent.",
+     "start": 4.567,
+     "end": 5.588
+    }
+   ]
+  },
+  {
+   "id": "h3",
+   "scene": "race",
+   "start": 5.788,
+   "end": 9.934,
+   "chunks": [
+    {
+     "text": "3 giants. 49 days. Same bet.",
+     "start": 5.788,
+     "end": 7.672
+    },
+    {
+     "text": "And the cutest one is winning.",
+     "start": 7.672,
+     "end": 9.934
+    }
+   ]
+  },
+  {
+   "id": "a1",
+   "scene": "grok",
+   "start": 10.184,
+   "end": 15.107,
+   "chunks": [
+    {
+     "text": "Day 0. Elon's xAI ships Grok Bot.",
+     "start": 10.184,
+     "end": 12.221
+    },
+    {
+     "text": "It keeps working with your laptop closed.",
+     "start": 12.221,
+     "end": 15.107
+    }
+   ]
+  },
+  {
+   "id": "b1",
+   "scene": "muse",
+   "start": 15.307,
+   "end": 19.249,
+   "chunks": [
+    {
+     "text": "Day 28. Meta ships Muse,",
+     "start": 15.307,
+     "end": 16.817
+    },
+    {
+     "text": "starring a cuddly doll named Jolly.",
+     "start": 16.817,
+     "end": 19.249
+    }
+   ]
+  },
+  {
+   "id": "b2",
+   "scene": "muse",
+   "start": 19.349,
+   "end": 21.258,
+   "chunks": [
+    {
+     "text": "Zuckerberg even put it on a keychain.",
+     "start": 19.349,
+     "end": 21.258
+    }
+   ]
+  },
+  {
+   "id": "c1",
+   "scene": "dots",
+   "start": 21.508,
+   "end": 25.414,
+   "chunks": [
+    {
+     "text": "Day 49. OpenAI ships Dots.",
+     "start": 21.508,
+     "end": 23.136
+    },
+    {
+     "text": "Little bubbles you name yourself.",
+     "start": 23.136,
+     "end": 25.414
+    }
+   ]
+  },
+  {
+   "id": "d1",
+   "scene": "why",
+   "start": 25.714,
+   "end": 29.239,
+   "chunks": [
+    {
+     "text": "Why cute?",
+     "start": 25.714,
+     "end": 26.18
+    },
+    {
+     "text": "Because you won't hand your inbox",
+     "start": 26.18,
+     "end": 27.976
+    },
+    {
+     "text": "and your card to a robot.",
+     "start": 27.976,
+     "end": 29.239
+    }
+   ]
+  },
+  {
+   "id": "d2",
+   "scene": "why",
+   "start": 29.339,
+   "end": 30.639,
+   "chunks": [
+    {
+     "text": "You'll hand them",
+     "start": 29.339,
+     "end": 30.107
+    },
+    {
+     "text": "to a friend.",
+     "start": 30.107,
+     "end": 30.639
+    }
+   ]
+  },
+  {
+   "id": "e1",
+   "scene": "team",
+   "start": 30.989,
+   "end": 34.666,
+   "chunks": [
+    {
+     "text": "And it won't stop at one.",
+     "start": 30.989,
+     "end": 32.287
+    },
+    {
+     "text": "Grok Bot has a bot",
+     "start": 32.287,
+     "end": 33.296
+    },
+    {
+     "text": "that bosses other bots.",
+     "start": 33.296,
+     "end": 34.666
+    }
+   ]
+  },
+  {
+   "id": "e2",
+   "scene": "team",
+   "start": 34.766,
+   "end": 38.547,
+   "chunks": [
+    {
+     "text": "OpenAI wants teams of Dots.",
+     "start": 34.766,
+     "end": 36.336
+    },
+    {
+     "text": "Meta's selling Muse to small business.",
+     "start": 36.336,
+     "end": 38.547
+    }
+   ]
+  },
+  {
+   "id": "e3",
+   "scene": "team",
+   "start": 38.697,
+   "end": 41.628,
+   "chunks": [
+    {
+     "text": "Your next coworker?",
+     "start": 38.697,
+     "end": 39.87
+    },
+    {
+     "text": "Not human. Probably adorable.",
+     "start": 39.87,
+     "end": 41.628
+    }
+   ]
+  },
+  {
+   "id": "f1",
+   "scene": "score",
+   "start": 41.978,
+   "end": 47.493,
+   "chunks": [
+    {
+     "text": "Scoreboard. Muse beat ChatGPT to #1",
+     "start": 41.978,
+     "end": 44.6
+    },
+    {
+     "text": "and gave Meta its best month since 2013.",
+     "start": 44.6,
+     "end": 47.493
+    }
+   ]
+  },
+  {
+   "id": "f2",
+   "scene": "score",
+   "start": 47.643,
+   "end": 51.467,
+   "chunks": [
+    {
+     "text": "Grok Bot went from a $300 plan",
+     "start": 47.643,
+     "end": 49.996
+    },
+    {
+     "text": "to $30, in two weeks.",
+     "start": 49.996,
+     "end": 51.467
+    }
+   ]
+  },
+  {
+   "id": "f3",
+   "scene": "score",
+   "start": 51.617,
+   "end": 53.762,
+   "chunks": [
+    {
+     "text": "And your first Dot",
+     "start": 51.617,
+     "end": 52.536
+    },
+    {
+     "text": "comes included with Pro.",
+     "start": 52.536,
+     "end": 53.762
+    }
+   ]
+  },
+  {
+   "id": "g1",
+   "scene": "end",
+   "start": 54.062,
+   "end": 57.182,
+   "chunks": [
+    {
+     "text": "Cute, cheap, or capable.",
+     "start": 54.062,
+     "end": 55.58
+    },
+    {
+     "text": "Who wins? Comment below.",
+     "start": 55.58,
+     "end": 57.182
+    }
+   ]
+  }
+ ]
+}

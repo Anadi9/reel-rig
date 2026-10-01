@@ -1,6 +1,6 @@
 # Reel notes — read me first
 
-Rules we learned the hard way, and where the latest work lives. Last updated 2026-09-26.
+Rules we learned the hard way, and where the latest work lives. Last updated 2026-10-01.
 
 ## Rules for every reel
 
@@ -17,6 +17,16 @@ Rules we learned the hard way, and where the latest work lives. Last updated 202
 - **Length:** when a content-package script runs longer than planned, ask before trimming.
 
 ## Latest work
+
+- **"Your next coworker isn't human" (AI agents v2: Grok Bot / Muse / Dots)** (no Anadi character; product marks are the cast, 57.8s, 2026-10-01):
+  - video: `out/agents-v2-reel.mp4` · cover (light, bold hook): `out/agents-v2-cover.png` · project: `agents-v2/` (self-contained Remotion, own README)
+  - rebuild: `./run_agents_v2_reel.sh` (`--skip-voice`, `--cover`). Script + sources: `agents-v2/script.json`.
+  - beats: NBC headline hook → 49-day counter + timeline (mono logos) → Day 0 Grok Bot (lid closes, tasks tick) → Day 28 Muse/Jolly → keychain charm
+    → Day 49 Dots get named → "Why cute?" robot NOPE / friend → chief-of-staff org chart, teams of Dots, Muse for Small Business, #your-team roster
+    → scoreboard (Meta LEADING) → "Who wins?" comment CTA.
+  - facts: Grok Bot $300 (SuperGrok Heavy) at launch → in $30 SuperGrok by Aug 26. Meta Sep: "best month since 2013" (sources disagree on %: 25/27/36, so no %).
+  - ⚠ voice is plain Piper (cloud session had no OpenVoice/HF access) — clone it on the Mac before posting.
+  - ⚠ lobehub `meta-text.svg` renders "Llama", don't use it as the Meta wordmark.
 
 - **"3 giants launched the same thing" (AI agents: Grok Bot / Muse / Dots) AI-news reel** (vector v3 character + real article screenshots, 41.2s, 2026-10-01):
   - video: `out/agents-reel.mp4` · cover: `out/agents-cover.png` · code: `remotion/src/agents/AgentsReel.tsx` · script + sources: `remotion/cfg/agents.json`

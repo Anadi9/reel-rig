@@ -1,0 +1,130 @@
+{
+ "title": "Your next coworker isn't human (AI agents v2: Grok Bot / Muse / Dots)",
+ "feed": "personal @the.anadi, English, AI-news register",
+ "notes": "say = what Piper reads (spelling tuned for Piper), show = on-screen caption. ' / ' in show marks a caption break. pause = silence after the line, seconds.",
+ "lines": [
+  {
+   "id": "h1",
+   "scene": "hook",
+   "say": "It's cute. It's cuddly. And it wants your data.",
+   "show": "It's cute. It's cuddly. / And it wants your data.",
+   "pause": 0.3
+  },
+  {
+   "id": "h2",
+   "scene": "hook",
+   "say": "That's a real headline. About an AI agent.",
+   "show": "That's a real headline. / About an AI agent.",
+   "pause": 0.2
+  },
+  {
+   "id": "h3",
+   "scene": "race",
+   "say": "Three giants. Forty nine days. Same bet. And the cutest one is winning.",
+   "show": "3 giants. 49 days. Same bet. / And the cutest one is winning.",
+   "pause": 0.25
+  },
+  {
+   "id": "a1",
+   "scene": "grok",
+   "say": "Day zero. Elon's X AI ships the Grok Bot. It keeps working with your laptop closed.",
+   "show": "Day 0. Elon's xAI ships Grok Bot. / It keeps working with your laptop closed.",
+   "pause": 0.2
+  },
+  {
+   "id": "b1",
+   "scene": "muse",
+   "say": "Day twenty eight. Meta ships Muse, starring a cuddly doll named Jolly.",
+   "show": "Day 28. Meta ships Muse, / starring a cuddly doll named Jolly.",
+   "pause": 0.1
+  },
+  {
+   "id": "b2",
+   "scene": "muse",
+   "say": "Zuckerberg even put it on a keychain.",
+   "show": "Zuckerberg even put it on a keychain.",
+   "pause": 0.25
+  },
+  {
+   "id": "c1",
+   "scene": "dots",
+   "say": "Day forty nine. Open AI ships Dots. Little bubbles you name yourself.",
+   "show": "Day 49. OpenAI ships Dots. / Little bubbles you name yourself.",
+   "pause": 0.3
+  },
+  {
+   "id": "d1",
+   "scene": "why",
+   "say": "Why cute? Because you won't hand your inbox and your card to a robot.",
+   "show": "Why cute? / Because you won't hand your inbox / and your card to a robot.",
+   "pause": 0.1
+  },
+  {
+   "id": "d2",
+   "scene": "why",
+   "say": "You'll hand them to a friend.",
+   "show": "You'll hand them / to a friend.",
+   "pause": 0.35
+  },
+  {
+   "id": "e1",
+   "scene": "team",
+   "say": "And it won't stop at one. The Grok Bot has a bot that bosses other bots.",
+   "show": "And it won't stop at one. / Grok Bot has a bot / that bosses other bots.",
+   "pause": 0.1
+  },
+  {
+   "id": "e2",
+   "scene": "team",
+   "say": "Open AI wants teams of Dots. Meta's selling Muse to small business.",
+   "show": "OpenAI wants teams of Dots. / Meta's selling Muse to small business.",
+   "pause": 0.15
+  },
+  {
+   "id": "e3",
+   "scene": "team",
+   "say": "Your next coworker? Not human. Probably adorable.",
+   "show": "Your next coworker? / Not human. Probably adorable.",
+   "pause": 0.35
+  },
+  {
+   "id": "f1",
+   "scene": "score",
+   "say": "Scoreboard. Muse beat Chat G P T to number one, and gave Meta its best month since twenty thirteen.",
+   "show": "Scoreboard. Muse beat ChatGPT to #1 / and gave Meta its best month since 2013.",
+   "pause": 0.15
+  },
+  {
+   "id": "f2",
+   "scene": "score",
+   "say": "The Grok Bot went from a three hundred dollar plan to thirty, in two weeks.",
+   "show": "Grok Bot went from a $300 plan / to $30, in two weeks.",
+   "pause": 0.15
+  },
+  {
+   "id": "f3",
+   "scene": "score",
+   "say": "And your first Dot comes included with Pro.",
+   "show": "And your first Dot / comes included with Pro.",
+   "pause": 0.3
+  },
+  {
+   "id": "g1",
+   "scene": "end",
+   "say": "Cute, cheap, or capable. Who wins? Comment below.",
+   "show": "Cute, cheap, or capable. / Who wins? Comment below.",
+   "pause": 0.9
+  }
+ ],
+ "sources": {
+  "nbc_cute": "NBC News, Angela Yang, Sep 24 2026 - 'It's cute. It's cuddly. And it wants your data.' (Jolly: cream-colored, beady black eyes, upward smile)",
+  "grok_launch": "x.ai/news/introducing-grok-bot - early beta Aug 11 2026 (SuperGrok Heavy $300/mo, Cursor Ultra, Cursor Teams Premium); Memeburn: works with laptop closed",
+  "grok_price": "Expanded Aug 21 and Aug 26 2026 to all SuperGrok ($30/mo) + Cursor Pro/Teams plans (blockchain.news, cellcog.ai, codersera)",
+  "grok_chief": "Bots delegate to other Bots; a 'chief of staff' bot manages specialist bots (beam.ai, superpowerdaily)",
+  "muse_launch": "Muse launched Sep 8 2026; overtook ChatGPT for #1 on Apple App Store (CNBC Sep 29, NBC)",
+  "muse_charm": "Engadget / Yahoo Tech - Muse Charm, keychain device; 'blend of a Labubu and a Tamagotchi'",
+  "muse_smb": "CNBC Sep 29 2026 - Meta launches Muse for Small Business (Shopify, Stripe, QuickBooks, Slack...)",
+  "meta_stock": "CNBC Sep 30 / Bloomberg Sep 24 2026 - Meta's best month since 2013 (exact % differs by source: 27-36%, so the reel states no %)",
+  "dots": "OpenAI DevDay Sep 29 2026 - Dots; 'Your dot' renameable; first dot included in Pro and Business Premium; teams of Dots coming (9to5google, Engadget, TechCrunch 'bubbly agentic avatar')"
+ }
+}
