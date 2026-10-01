@@ -181,7 +181,7 @@ const HookScene: React.FC = () => {
         const x0 = 90 + i * 150, y0 = 1060 + i * 80;
         return (
           <div key={c} style={{ position: "absolute", left: interpolate(p, [0, 1], [x0, 700]), top: interpolate(p, [0, 1], [y0, 1220]),
-            opacity: frame < at ? 0 : 1 - p * 0.9, transform: `scale(${1 - p * 0.6})`, fontFamily: SILK, fontSize: 26, padding: "8px 12px", background: INK, color: PAPER }}>{c}</div>
+            opacity: frame < at ? 0 : 1 - p, transform: `scale(${1 - p * 0.6})`, fontFamily: SILK, fontSize: 26, padding: "8px 12px", background: INK, color: PAPER }}>{c}</div>
         );
       })}
     </AbsoluteFill>

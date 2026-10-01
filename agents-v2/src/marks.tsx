@@ -59,7 +59,7 @@ export const Jolly: React.FC<{ size: number; frame: number; wave?: number; style
         <g transform={`rotate(${armA} 40 124)`}><ellipse cx="14" cy="124" rx="24" ry="15" fill="#EFE3CB" stroke="#D9C9A8" strokeWidth="2.5" /></g>
         <g transform="rotate(-14 160 128)"><ellipse cx="186" cy="132" rx="24" ry="15" fill="#EFE3CB" stroke="#D9C9A8" strokeWidth="2.5" /></g>
         {/* face */}
-        <g transform={`translate(0 ${100 * (1 - blink)}) scale(1 ${blink})`} style={{ transformOrigin: "100px 96px" }}>
+        <g transform={`translate(0 ${96 * (1 - blink)}) scale(1 ${blink})`}>
           <circle cx="78" cy="96" r="7.5" fill="#121212" />
           <circle cx="122" cy="96" r="7.5" fill="#121212" />
           <circle cx="80.5" cy="93.5" r="2.2" fill="#fff" />
