@@ -55,7 +55,8 @@ const ease = (frame: number, a: number, b: number, from: number, to: number) =>
   interpolate(frame, [a, b], [from, to], { extrapolateLeft: "clamp", extrapolateRight: "clamp", easing: Easing.bezier(0.2, 0.8, 0.2, 1) });
 
 // ─── captions ──────────────────────────────────────────────────────────────────────────────
-const Captions: React.FC = () => {
+type Box = { left: number; top: number; width: number; fontSize: number };
+const Captions: React.FC<{ box?: Box }> = ({ box = { left: 70, top: 292, width: 870, fontSize: 86 } }) => {
   const frame = useCurrentFrame();
   const t = frame / FPS;
   let chunk: { text: string; start: number; end: number } | null = null;
@@ -72,7 +73,7 @@ const Captions: React.FC = () => {
   let acc = 0;
   const fg = dark ? PAPER : INK;
   return (
-    <div style={{ position: "absolute", left: 70, top: 292, width: 870, fontFamily: JERSEY, fontSize: 86, lineHeight: 0.98, letterSpacing: 0.5 }}>
+    <div style={{ position: "absolute", left: box.left, top: box.top, width: box.width, fontFamily: JERSEY, fontSize: box.fontSize, lineHeight: 0.98, letterSpacing: 0.5 }}>
       {ws.map((w, i) => {
         const ws0 = chunk!.start + ((chunk!.end - chunk!.start) * acc) / tot;
         acc += wlen(w);
@@ -138,7 +139,7 @@ const TimelineStrip: React.FC<{ day: number; dark: boolean; top: number; frame: 
 // ─── narrator: the vector character bust, bottom-left, lip-synced to the voiceover ─────────
 // VectorBust is a redraw of the rig (src/VectorBust.tsx); track from avatar/lipsync.py. Face stays above the IG caption block.
 export const NARRATOR = { left: 10, top: 1330, width: 500 };
-const Narrator: React.FC = () => {
+const Narrator: React.FC<{ pos?: { left: number; top: number; width: number } }> = ({ pos = NARRATOR }) => {
   const frame = useCurrentFrame();
   const i = Math.min(frame, LIPSYNC.visemes.length - 1);
   const v = LIPSYNC.visemes[i];
@@ -147,8 +148,8 @@ const Narrator: React.FC = () => {
   const tilt = Math.sin(frame / 23) * (talking ? 2.2 : 0.8);
   const enter = spring({ frame, fps: FPS, config: { damping: 14 } });
   return (
-    <div style={{ position: "absolute", left: NARRATOR.left, top: NARRATOR.top + bob + (1 - enter) * 320 }}>
-      <VectorBust width={NARRATOR.width} viseme={v} brow={LIPSYNC.brow[i] === 1} tilt={tilt} />
+    <div style={{ position: "absolute", left: pos.left, top: pos.top + bob + (1 - enter) * 320 }}>
+      <VectorBust width={pos.width} viseme={v} brow={LIPSYNC.brow[i] === 1} tilt={tilt} />
     </div>
   );
 };
@@ -527,11 +528,13 @@ const EndScene: React.FC = () => {
 
 const SCENE_COMP: Record<Scene, React.FC> = { hook: HookScene, race: RaceScene, grok: GrokScene, muse: MuseScene, dots: DotsScene, why: WhyScene, team: TeamScene, score: ScoreScene, end: EndScene };
 
-export const AgentsV2: React.FC = () => {
+/** All scenes on a 1080×1920 stage (backgrounds + stepped wipes), without narrator or captions. */
+const Stage: React.FC = () => {
   const frame = useCurrentFrame();
-  const { durationInFrames } = useVideoConfig();
+  const { fps } = useVideoConfig();
+  const durationInFrames = Math.ceil(TOTAL_SEC * fps);
   return (
-    <AbsoluteFill style={{ background: PAPER }}>
+    <AbsoluteFill style={{ background: PAPER, width: 1080, height: 1920 }}>
       {SCENES.map((sc) => {
         const from = F(sceneStart(sc)), to = sc === "end" ? durationInFrames : F(sceneEnd(sc));
         const C = SCENE_COMP[sc];
@@ -545,8 +548,37 @@ export const AgentsV2: React.FC = () => {
           </Sequence>
         );
       })}
-      <Narrator />
-      <Captions />
+    </AbsoluteFill>
+  );
+};
+
+export const AgentsV2: React.FC = () => (
+  <AbsoluteFill style={{ background: PAPER }}>
+    <Stage />
+    <Narrator />
+    <Captions />
+    <Audio src={staticFile("vo.wav")} />
+  </AbsoluteFill>
+);
+
+// ─── landscape (X / YouTube, 1920×1080) ──────────────────────────────────────────────────────
+// Left panel: captions + narrator bust. Right: a 1080×1080 window onto the portrait stage's action band
+// (y 520–1600: everything between the portrait captions and the portrait bust slot).
+const BAND_TOP = 520;
+export const AgentsV2Landscape: React.FC = () => {
+  const frame = useCurrentFrame();
+  const t = frame / FPS;
+  const cur = [...SCENES].reverse().find((sc) => t >= sceneStart(sc)) ?? "hook";
+  const dark = DARK[cur];
+  return (
+    <AbsoluteFill style={{ background: dark ? INK : PAPER }}>
+      <div style={{ position: "absolute", left: 840, top: 0, width: 1080, height: 1080, overflow: "hidden" }}>
+        <div style={{ position: "absolute", left: 0, top: -BAND_TOP, width: 1080, height: 1920 }}><Stage /></div>
+      </div>
+      <div style={{ position: "absolute", left: 836, top: 60, width: 4, height: 960, background: dark ? PAPER : INK, opacity: 0.12 }} />
+      <Captions box={{ left: 64, top: 64, width: 720, fontSize: 76 }} />
+      <Narrator pos={{ left: 150, top: 470, width: 520 }} />
+      <div style={{ position: "absolute", left: 64, top: 1010, fontFamily: SILK, fontSize: 22, padding: "6px 12px", background: dark ? PAPER : INK, color: dark ? INK : LIME }}>@THE.ANADI · AI NEWS</div>
       <Audio src={staticFile("vo.wav")} />
     </AbsoluteFill>
   );

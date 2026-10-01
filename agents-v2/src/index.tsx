@@ -5,7 +5,7 @@ import "@fontsource/silkscreen/400.css";
 import "@fontsource/archivo-black/400.css";
 import "@fontsource/inter/400.css";
 import "@fontsource/inter/800.css";
-import { AgentsV2, FPS, TOTAL_SEC } from "./AgentsV2";
+import { AgentsV2, AgentsV2Landscape, FPS, TOTAL_SEC } from "./AgentsV2";
 import { Cover } from "./Cover";
 
 /** Hold the first frame until the webfonts are in, so no frame renders with fallback type. */
@@ -21,6 +21,7 @@ const withFonts = (C: React.FC): React.FC => () => {
 const Root: React.FC = () => (
   <>
     <Composition id="AgentsV2" component={withFonts(AgentsV2)} width={1080} height={1920} fps={FPS} durationInFrames={Math.ceil(TOTAL_SEC * FPS)} />
+    <Composition id="AgentsV2Landscape" component={withFonts(AgentsV2Landscape)} width={1920} height={1080} fps={FPS} durationInFrames={Math.ceil(TOTAL_SEC * FPS)} />
     <Still id="AgentsV2Cover" component={withFonts(Cover)} width={1080} height={1920} />
   </>
 );

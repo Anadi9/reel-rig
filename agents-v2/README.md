@@ -4,6 +4,8 @@ Combines the three commentary angles: the 49-day timeline + scoreboard (logos ge
 "cute is the strategy" hook (NBC: "It's cute. It's cuddly. And it wants your data."), and the coworker narrative.
 
 - Script + sources: `script.json` · scenes: `src/AgentsV2.tsx` · characters: `src/marks.tsx` · thumbnail: `src/Cover.tsx`
+- **Landscape (X):** composition `AgentsV2Landscape` (1920×1080) → `../out/agents-v2-landscape.mp4`. Left panel = captions +
+  narrator bust; right = a 1080×1080 window onto the portrait stage's action band (y 520–1600), so both cuts share every scene.
 - Rebuild: `../run_agents_v2_reel.sh` (`--skip-voice`, `--cover`) → `../out/agents-v2-reel.mp4`, `../out/agents-v2-cover.png`
 - Company logos (xAI, Meta, OpenAI) are mono, from `@lobehub/icons-static-svg` (`src/logos.ts`).
   ⚠ That pack's `meta-text.svg` is the **Llama** wordmark — company names are typeset instead.

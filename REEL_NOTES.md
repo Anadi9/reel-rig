@@ -20,6 +20,7 @@ Rules we learned the hard way, and where the latest work lives. Last updated 202
 
 - **"Your next coworker isn't human" (AI agents v2: Grok Bot / Muse / Dots)** (no Anadi character; product marks are the cast + narrator bust, 62.0s, 2026-10-01):
   - video: `out/agents-v2-reel.mp4` · cover (light, bold hook): `out/agents-v2-cover.png` · project: `agents-v2/` (self-contained Remotion, own README)
+  - landscape for X: `out/agents-v2-landscape.mp4` (1920×1080, composition `AgentsV2Landscape`, same scenes in a 1080² window + captions/bust panel left).
   - rebuild: `./run_agents_v2_reel.sh` (`--skip-voice`, `--cover`). Script + sources: `agents-v2/script.json`.
   - beats: NBC headline hook → 49-day counter + timeline (mono logos) → Day 0 Grok Bot (lid closes, tasks tick) → Day 28 Muse/Jolly → keychain charm
     → Day 49 Dots get named → "Why cute?" robot NOPE / friend → chief-of-staff org chart, teams of Dots, Muse for Small Business, #your-team roster
