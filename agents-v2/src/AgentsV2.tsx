@@ -5,6 +5,8 @@
 // everything inside the IG safe zone (x 60–940, y 280–1600). All beats key off script line ids (timing.json).
 import React from "react";
 import { AbsoluteFill, Audio, Easing, Sequence, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
+import LIPSYNC from "./lipsync.json";
+import { VectorBust } from "./VectorBust";
 import TIMING from "./timing.json";
 import { Check, DOT_COLORS, DotChar, GrokChar, INK, Jolly, LIME, Logo, PAPER, Robot } from "./marks";
 
@@ -133,6 +135,24 @@ const TimelineStrip: React.FC<{ day: number; dark: boolean; top: number; frame: 
   );
 };
 
+// ─── narrator: the vector character bust, bottom-left, lip-synced to the voiceover ─────────
+// VectorBust is a redraw of the rig (src/VectorBust.tsx); track from avatar/lipsync.py. Face stays above the IG caption block.
+export const NARRATOR = { left: 10, top: 1330, width: 500 };
+const Narrator: React.FC = () => {
+  const frame = useCurrentFrame();
+  const i = Math.min(frame, LIPSYNC.visemes.length - 1);
+  const v = LIPSYNC.visemes[i];
+  const bob = LIPSYNC.bob[i] || (i > 0 && LIPSYNC.bob[i - 1]) ? -5 : 0;
+  const talking = v !== "rest";
+  const tilt = Math.sin(frame / 23) * (talking ? 2.2 : 0.8);
+  const enter = spring({ frame, fps: FPS, config: { damping: 14 } });
+  return (
+    <div style={{ position: "absolute", left: NARRATOR.left, top: NARRATOR.top + bob + (1 - enter) * 320 }}>
+      <VectorBust width={NARRATOR.width} viseme={v} brow={LIPSYNC.brow[i] === 1} tilt={tilt} />
+    </div>
+  );
+};
+
 // ─── scenes ────────────────────────────────────────────────────────────────────────────────
 const HookScene: React.FC = () => {
   const frame = useCurrentFrame();
@@ -154,13 +174,13 @@ const HookScene: React.FC = () => {
         <div style={{ fontFamily: INTER, fontSize: 26, color: "#555", marginTop: 18 }}>On Meta’s new AI agent, Muse</div>
       </div>
       {frame >= F(h2.start) && <Stamp text="REAL HEADLINE" p={stampP} style={{ right: 70, top: 560 }} rot={6} />}
-      <div style={{ position: "absolute", left: 340, top: 1140 }}><Jolly size={400} frame={frame} wave={frame < F(h1.start) + 30 ? 1 : 0} /></div>
+      <div style={{ position: "absolute", left: 560, top: 1010 }}><Jolly size={360} frame={frame} wave={frame < F(h1.start) + 30 ? 1 : 0} /></div>
       {chips.map((c, i) => {
         const at = cueAt("h1", "data", 0) - 6 + i * 5;
         const p = ease(frame, at, at + 16, 0, 1);
-        const x0 = 90 + i * 70, y0 = 1180 + i * 90;
+        const x0 = 90 + i * 150, y0 = 1060 + i * 80;
         return (
-          <div key={c} style={{ position: "absolute", left: interpolate(p, [0, 1], [x0, 500]), top: interpolate(p, [0, 1], [y0, 1380]),
+          <div key={c} style={{ position: "absolute", left: interpolate(p, [0, 1], [x0, 700]), top: interpolate(p, [0, 1], [y0, 1220]),
             opacity: frame < at ? 0 : 1 - p * 0.9, transform: `scale(${1 - p * 0.6})`, fontFamily: SILK, fontSize: 26, padding: "8px 12px", background: INK, color: PAPER }}>{c}</div>
         );
       })}
@@ -180,9 +200,9 @@ const RaceScene: React.FC = () => {
         <div style={{ fontSize: 330, color: LIME }}>{count}</div>
         <div style={{ fontSize: 96 }}>DAYS. SAME BET.</div>
       </div>
-      <TimelineStrip day={count} dark top={1110} frame={frame} />
+      <TimelineStrip day={count} dark top={1010} frame={frame} />
       {frame >= winAt && (
-        <div style={{ position: "absolute", left: 70, top: 1400, display: "flex", alignItems: "center", gap: 24, transform: `scale(${qP})`, transformOrigin: "left center" }}>
+        <div style={{ position: "absolute", left: 70, top: 1250, display: "flex", alignItems: "center", gap: 24, transform: `scale(${qP})`, transformOrigin: "left center" }}>
           <div style={{ fontFamily: JERSEY, fontSize: 84, background: LIME, color: INK, padding: "0 18px" }}>WINNER: ???</div>
           <div style={{ fontFamily: SILK, fontSize: 24, color: PAPER, opacity: 0.7 }}>STAY FOR THE<br />SCOREBOARD</div>
         </div>
@@ -206,18 +226,18 @@ const GrokScene: React.FC = () => {
         <div style={{ fontFamily: SILK, fontSize: 26, color: PAPER, textAlign: "center", marginTop: 18 }}>GROK BOT</div>
       </div>
       {/* laptop: the lid folds shut, the bot keeps ticking tasks */}
-      <div style={{ position: "absolute", left: 500, top: 860, width: 420, opacity: fade(frame, cueAt("a1", "it", base) - 6) }}>
+      <div style={{ position: "absolute", left: 540, top: 820, width: 380, opacity: fade(frame, cueAt("a1", "it", base) - 6) }}>
         <div style={{ height: 250, transformOrigin: "bottom center", transform: `perspective(900px) rotateX(${lid * 86}deg)`,
           background: "#1C1C20", border: `6px solid #3A3A40`, borderBottom: "none", padding: 22, boxSizing: "border-box" }}>
           <div style={{ fontFamily: SILK, fontSize: 20, color: PAPER, opacity: 0.6 }}>YOUR LAPTOP</div>
         </div>
-        <div style={{ height: 20, background: "#3A3A40", width: 460, marginLeft: -20 }} />
+        <div style={{ height: 20, background: "#3A3A40", width: 420, marginLeft: -20 }} />
         <div style={{ fontFamily: SILK, fontSize: 24, color: lid > 0.9 ? LIME : PAPER, marginTop: 16, opacity: lid > 0.9 ? 1 : 0 }}>LID CLOSED. STILL WORKING.</div>
       </div>
       {tasks.map((tk, i) => {
         const at = lidAt + 12 + i * 8;
         return (
-          <div key={tk} style={{ position: "absolute", left: 500, top: 1260 + i * 72, display: "flex", alignItems: "center", gap: 16, opacity: fade(frame, at, 5) }}>
+          <div key={tk} style={{ position: "absolute", left: 590, top: 1190 + i * 72, display: "flex", alignItems: "center", gap: 16, opacity: fade(frame, at, 5) }}>
             <Check size={44} color={LIME} p={ease(frame, at, at + 8, 0, 1)} />
             <div style={{ fontFamily: JERSEY, fontSize: 58, color: PAPER }}>{tk}</div>
           </div>
@@ -234,12 +254,12 @@ const MuseScene: React.FC = () => {
   const nameP = pop(frame, cueAt("b1", "jolly", base), FPS, 9);
   const keyAt = F(seg("b2").start - base);
   const k = ease(frame, keyAt + 4, keyAt + 22, 0, 1);
-  const jSize = interpolate(k, [0, 1], [460, 250]);
+  const jSize = interpolate(k, [0, 1], [400, 240]);
   const swing = Math.sin((frame - keyAt) / 7) * 6 * k;
   return (
     <AbsoluteFill>
       <LaunchHeader day={28} date="SEP 8 · APP STORE #1" logo="meta" dark={false} frame={frame} />
-      <div style={{ position: "absolute", left: 540 - jSize / 2, top: interpolate(k, [0, 1], [920, 1040]), transform: `scale(${jIn}) rotate(${swing}deg)`, transformOrigin: "50% -30%" }}>
+      <div style={{ position: "absolute", left: 600 - jSize / 2, top: interpolate(k, [0, 1], [860, 1010]), transform: `scale(${jIn}) rotate(${swing}deg)`, transformOrigin: "50% -30%" }}>
         {/* keychain: ring + chain + charm frame */}
         {k > 0 && (
           <svg style={{ position: "absolute", left: jSize / 2 - 60, top: -190 * k, opacity: k }} width="120" height="200" viewBox="0 0 120 200">
@@ -252,12 +272,12 @@ const MuseScene: React.FC = () => {
         </div>
       </div>
       {frame >= cueAt("b1", "jolly", base) && k < 0.5 && (
-        <div style={{ position: "absolute", left: 680, top: 980, transform: `scale(${nameP}) rotate(4deg)`, fontFamily: JERSEY, fontSize: 80, background: LIME, color: INK, padding: "0 18px", border: `4px solid ${INK}` }}>“JOLLY”</div>
+        <div style={{ position: "absolute", left: 640, top: 1230, transform: `scale(${nameP}) rotate(4deg)`, fontFamily: JERSEY, fontSize: 80, background: LIME, color: INK, padding: "0 18px", border: `4px solid ${INK}` }}>“JOLLY”</div>
       )}
       {k > 0 && (
-        <div style={{ position: "absolute", left: 70, top: 1460, opacity: k }}>
+        <div style={{ position: "absolute", left: 560, top: 1400, opacity: k }}>
           <Tag>MUSE CHARM</Tag>
-          <div style={{ fontFamily: JERSEY, fontSize: 64, color: INK, marginTop: 8 }}>LABUBU × TAMAGOTCHI</div>
+          <div style={{ fontFamily: JERSEY, fontSize: 54, color: INK, marginTop: 8 }}>LABUBU × TAMAGOTCHI</div>
         </div>
       )}
     </AbsoluteFill>
@@ -275,7 +295,7 @@ const DotsScene: React.FC = () => {
       <LaunchHeader day={49} date="SEP 29 · DEVDAY" logo="openai" dark frame={frame} />
       {DOT_NAMES.map((n, i) => {
         const p = pop(frame, inAt + i * 5, FPS, 9);
-        const x = 110 + i * 300, y = 940 + (i % 2) * 70;
+        const x = 110 + i * 300, y = 860 + (i % 2) * 70;
         const typed = Math.max(0, Math.min(n.length, Math.floor((frame - nameAt - i * 6) / 1.3)));
         return (
           <div key={n} style={{ position: "absolute", left: x, top: y + (1 - p) * 300, opacity: Math.min(1, p * 2) }}>
@@ -288,7 +308,7 @@ const DotsScene: React.FC = () => {
           </div>
         );
       })}
-      <div style={{ position: "absolute", left: 70, top: 1470, fontFamily: SILK, fontSize: 24, color: PAPER, opacity: 0.7 * fade(frame, nameAt) }}>“YOUR DOT” → RENAME IT ANYTHING</div>
+      <div style={{ position: "absolute", left: 70, top: 760, fontFamily: SILK, fontSize: 24, color: PAPER, opacity: 0.7 * fade(frame, nameAt) }}>“YOUR DOT” → RENAME IT ANYTHING</div>
     </AbsoluteFill>
   );
 };
@@ -308,29 +328,29 @@ const WhyScene: React.FC = () => {
         const bounce = frame > robotAt + 12 && frame < friendAt ? Math.sin(((frame - robotAt - 12) / 10) * Math.PI) * 30 : 0;
         const toFriend = ease(frame, friendAt + 4 + i * 4, friendAt + 18 + i * 4, 0, 1);
         const x = 70 + i * 290;
-        const y = 600 + toRobot * 260 - Math.abs(bounce) + toFriend * 420;
-        const tx = interpolate(toFriend, [0, 1], [x, 360 + i * 80]);
+        const y = 600 + toRobot * 220 - Math.abs(bounce) + toFriend * 420;
+        const tx = interpolate(toFriend, [0, 1], [interpolate(toRobot, [0, 1], [x, [430, 590, 820][i]]), 560 + i * 90]);
         return (
           <div key={it} style={{ position: "absolute", left: tx, top: y, opacity: fade(frame, appear, 6) * (1 - toFriend * 0.85),
             transform: `scale(${1 - toFriend * 0.5}) rotate(${(i - 1) * 4}deg)`, fontFamily: JERSEY, fontSize: 70, background: INK, color: PAPER, padding: "6px 22px" }}>{it}</div>
         );
       })}
-      <div style={{ position: "absolute", left: 70, top: 1050, fontFamily: BLACK, fontSize: 200, lineHeight: 0.9, color: INK, letterSpacing: -6,
+      <div style={{ position: "absolute", left: 70, top: 900, fontFamily: BLACK, fontSize: 200, lineHeight: 0.9, color: INK, letterSpacing: -6,
         opacity: 1 - fade(frame, robotAt - 8, 6), transform: `scale(${pop(frame, 0)})`, transformOrigin: "left center" }}>WHY<br /><span style={{ background: LIME, padding: "0 14px" }}>CUTE?</span></div>
       {/* robot ↔ friends */}
-      <div style={{ position: "absolute", left: 390, top: 1070, opacity: (1 - swap) * fade(frame, robotAt - 4, 6) }}>
+      <div style={{ position: "absolute", left: 560, top: 960, opacity: (1 - swap) * fade(frame, robotAt - 4, 6) }}>
         <Robot size={300} frame={frame} />
         {frame > robotAt + 14 && <Stamp text="NOPE" p={pop(frame, robotAt + 14, FPS, 10)} color="#FF5A4E" rot={-10} style={{ left: 200, top: -60 }} />}
       </div>
       {swap > 0 && (
-        <div style={{ position: "absolute", left: 70, top: 1120, width: 940, display: "flex", alignItems: "flex-end", justifyContent: "center", gap: 30,
+        <div style={{ position: "absolute", left: 300, top: 1040, width: 640, display: "flex", alignItems: "flex-end", justifyContent: "flex-end", gap: 24,
           transform: `scale(${swap})`, transformOrigin: "center bottom" }}>
           <GrokChar size={190} frame={frame} />
           <Jolly size={250} frame={frame} wave={1} />
           <DotChar size={200} frame={frame} color={DOT_COLORS[0]} />
         </div>
       )}
-      {swap > 0.5 && <Stamp text="FRIEND" p={pop(frame, friendAt + 10, FPS, 10)} rot={-6} style={{ left: 600, top: 1000 }} />}
+      {swap > 0.5 && <Stamp text="FRIEND" p={pop(frame, friendAt + 10, FPS, 10)} rot={-6} style={{ left: 600, top: 960 }} />}
     </AbsoluteFill>
   );
 };
@@ -347,8 +367,8 @@ const TeamScene: React.FC = () => {
     <AbsoluteFill>
       {phase === 0 && (
         <>
-          <div style={{ position: "absolute", left: 390, top: 600, transform: `scale(${pop(frame, bossAt)})` }}>
-            <GrokChar size={300} frame={frame} working />
+          <div style={{ position: "absolute", left: 410, top: 560, transform: `scale(${pop(frame, bossAt)})` }}>
+            <GrokChar size={260} frame={frame} working />
             <div style={{ fontFamily: JERSEY, fontSize: 52, color: INK, background: LIME, textAlign: "center", marginTop: 14, padding: "0 10px" }}>CHIEF OF STAFF</div>
           </div>
           {subs.map((s, i) => {
@@ -358,9 +378,9 @@ const TeamScene: React.FC = () => {
             return (
               <React.Fragment key={s}>
                 <svg style={{ position: "absolute", left: 0, top: 0 }} width="1080" height="1920">
-                  <line x1="540" y1="985" x2={x + 80} y2="1190" stroke={PAPER} strokeOpacity={0.4 * p} strokeWidth="4" strokeDasharray="10 10" />
+                  <line x1="540" y1="900" x2={x + 80} y2="1070" stroke={PAPER} strokeOpacity={0.4 * p} strokeWidth="4" strokeDasharray="10 10" />
                 </svg>
-                <div style={{ position: "absolute", left: x, top: 1190, transform: `scale(${p})`, textAlign: "center", width: 160 }}>
+                <div style={{ position: "absolute", left: x, top: 1070, transform: `scale(${p})`, textAlign: "center", width: 160 }}>
                   <GrokChar size={160} frame={frame + i * 11} working />
                   <div style={{ fontFamily: SILK, fontSize: 22, color: PAPER, marginTop: 10 }}>{s}</div>
                 </div>
@@ -413,8 +433,8 @@ const TeamScene: React.FC = () => {
                 </div>
               ))}
             </div>
-            {frame >= nh && <Stamp text="NOT HUMAN" p={pop(frame, nh, FPS, 10)} color="#FF5A4E" rot={-7} style={{ left: 120, top: 1260 }} />}
-            {frame >= ad && <Stamp text="ADORABLE" p={pop(frame, ad, FPS, 10)} rot={5} style={{ left: 480, top: 1400 }} />}
+            {frame >= nh && <Stamp text="NOT HUMAN" p={pop(frame, nh, FPS, 10)} color="#FF5A4E" rot={-7} style={{ left: 150, top: 1150 }} />}
+            {frame >= ad && <Stamp text="ADORABLE" p={pop(frame, ad, FPS, 10)} rot={5} style={{ left: 560, top: 1260 }} />}
           </>
         );
       })()}
@@ -426,7 +446,7 @@ const ScoreScene: React.FC = () => {
   const frame = useCurrentFrame();
   const base = sceneStart("score");
   const appAt = cueAt("f1", "muse", base);
-  const stockAt = cueAt("f1", "and", base);
+  const stockAt = cueAt("f1", "stock", base);
   const priceAt = F(seg("f2").start - base);
   const strikeAt = cueAt("f2", "to", base, 0);
   const dotAt = F(seg("f3").start - base) + 4;
@@ -473,7 +493,7 @@ const ScoreScene: React.FC = () => {
         ))}
       </div>
       {lead > 0.05 && <Stamp text="LEADING" p={lead} rot={-6} style={{ left: 520, top: 528, fontSize: 70 }} />}
-      <div style={{ position: "absolute", left: 70, top: 1500, fontFamily: SILK, fontSize: 20, color: INK, opacity: 0.55, width: 860 }}>
+      <div style={{ position: "absolute", left: 70, top: 1250, fontFamily: SILK, fontSize: 20, color: INK, opacity: 0.55, width: 860 }}>
         SOURCES: CNBC, BLOOMBERG, NBC, X.AI, ENGADGET, TECHCRUNCH · SEP 2026
       </div>
     </AbsoluteFill>
@@ -489,7 +509,7 @@ const EndScene: React.FC = () => {
     <AbsoluteFill>
       <div style={{ position: "absolute", left: 70, top: 580, fontFamily: BLACK, fontSize: 168, lineHeight: 0.9, color: INK, letterSpacing: -4,
         transform: `scale(${pop(frame, whoAt)})`, transformOrigin: "left center" }}>WHO<br /><span style={{ background: LIME, padding: "0 14px" }}>WINS?</span></div>
-      <div style={{ position: "absolute", left: 70, top: 1000, width: 880, display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
+      <div style={{ position: "absolute", left: 70, top: 920, width: 880, display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
         {[<GrokChar key="g" size={200} frame={frame} />, <Jolly key="j" size={240} frame={frame} wave={frame > whoAt ? 1 : 0} />, <DotChar key="d" size={210} frame={frame} color={DOT_COLORS[0]} />].map((el, i) => (
           <div key={i} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 10, transform: `translateY(${(1 - pop(frame, 2 + i * 5)) * 300}px)` }}>
             {el}
@@ -497,8 +517,8 @@ const EndScene: React.FC = () => {
           </div>
         ))}
       </div>
-      <div style={{ position: "absolute", left: 70, top: 1440, width: 870, display: "flex", justifyContent: "space-between", alignItems: "center", opacity: fade(frame, whoAt + 10) }}>
-        <div style={{ fontFamily: JERSEY, fontSize: 60, color: INK }}>COMMENT BELOW ↓</div>
+      <div style={{ position: "absolute", left: 580, top: 1340, width: 360, display: "flex", flexDirection: "column", alignItems: "flex-start", gap: 18, opacity: fade(frame, whoAt + 10) }}>
+        <div style={{ fontFamily: JERSEY, fontSize: 60, color: INK, whiteSpace: "nowrap" }}>COMMENT BELOW ↓</div>
         <div style={{ fontFamily: SILK, fontSize: 26, background: INK, color: LIME, padding: "10px 16px" }}>@THE.ANADI</div>
       </div>
     </AbsoluteFill>
@@ -525,6 +545,7 @@ export const AgentsV2: React.FC = () => {
           </Sequence>
         );
       })}
+      <Narrator />
       <Captions />
       <Audio src={staticFile("vo.wav")} />
     </AbsoluteFill>

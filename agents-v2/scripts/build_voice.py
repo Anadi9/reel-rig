@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Piper voiceover for the agents v2 reel: one take per script line, joined with the
-script's pauses. Writes public/vo.wav and src/timing.json (line + caption-chunk times, seconds).
+script's pauses. Writes public/vo_piper.wav ($OUT) and src/timing.json (line + caption-chunk times, seconds).
 
 Chunk times inside a line are split by spoken character count, which tracks Piper's pace
 closely enough for 2-line captions. Run from agents-v2/: python3 scripts/build_voice.py
@@ -52,7 +52,7 @@ for line in cfg["lines"]:
     print(f'{line["id"]:>3} {dur:5.2f}s  {line["say"]}')
 
 os.makedirs(os.path.join(ROOT, "public"), exist_ok=True)
-with wave.open(os.path.join(ROOT, "public", "vo.wav"), "wb") as w:
+with wave.open(os.path.join(ROOT, "public", os.environ.get("OUT", "vo_piper.wav")), "wb") as w:
     w.setnchannels(1); w.setsampwidth(2); w.setframerate(sr); w.writeframes(bytes(pcm))
 json.dump({"total": round(t, 3), "segments": segs}, open(os.path.join(ROOT, "src", "timing.json"), "w"), indent=1)
 print(f"total {t:.2f}s")

@@ -20,15 +20,15 @@
   {
    "id": "h3",
    "scene": "race",
-   "say": "Three giants. Forty nine days. Same bet. And the cutest one is winning.",
-   "show": "3 giants. 49 days. Same bet. / And the cutest one is winning.",
+   "say": "The three biggest names in tech. Forty nine days. Same bet. And the cutest one is winning.",
+   "show": "The 3 biggest names in tech. 49 days. Same bet. / And the cutest one is winning.",
    "pause": 0.25
   },
   {
    "id": "a1",
    "scene": "grok",
-   "say": "Day zero. Elon's X AI ships the Grok Bot. It keeps working with your laptop closed.",
-   "show": "Day 0. Elon's xAI ships Grok Bot. / It keeps working with your laptop closed.",
+   "say": "Day zero. Musk ships the Grok Bot. It keeps working with your laptop closed.",
+   "show": "Day 0. Musk ships Grok Bot. / It keeps working with your laptop closed.",
    "pause": 0.2
   },
   {
@@ -48,15 +48,15 @@
   {
    "id": "c1",
    "scene": "dots",
-   "say": "Day forty nine. Open AI ships Dots. Little bubbles you name yourself.",
-   "show": "Day 49. OpenAI ships Dots. / Little bubbles you name yourself.",
+   "say": "Day forty nine. Open AI launches Dots. Little bubbles you name yourself.",
+   "show": "Day 49. OpenAI launches Dots. / Little bubbles you name yourself.",
    "pause": 0.3
   },
   {
    "id": "d1",
    "scene": "why",
-   "say": "Why cute? Because you won't hand your inbox and your card to a robot.",
-   "show": "Why cute? / Because you won't hand your inbox / and your card to a robot.",
+   "say": "Why cute? Because you won't hand your inbox and your credit card to a robot.",
+   "show": "Why cute? / Because you won't hand your inbox / and your credit card to a robot.",
    "pause": 0.1
   },
   {
@@ -69,15 +69,15 @@
   {
    "id": "e1",
    "scene": "team",
-   "say": "And it won't stop at one. The Grok Bot has a bot that bosses other bots.",
-   "show": "And it won't stop at one. / Grok Bot has a bot / that bosses other bots.",
+   "say": "And it won't stop at one. The Grok Bot has a bot that manages other bots.",
+   "show": "And it won't stop at one. / Grok Bot has a bot / that manages other bots.",
    "pause": 0.1
   },
   {
    "id": "e2",
    "scene": "team",
-   "say": "Open AI wants teams of Dots. Meta's selling Muse to small business.",
-   "show": "OpenAI wants teams of Dots. / Meta's selling Muse to small business.",
+   "say": "Open AI wants teams of Dots. And Meta? The Muse app, for small business.",
+   "show": "OpenAI wants teams of Dots. / And Meta? Muse for Small Business.",
    "pause": 0.15
   },
   {
@@ -90,8 +90,8 @@
   {
    "id": "f1",
    "scene": "score",
-   "say": "Scoreboard. Muse beat Chat G P T to number one, and gave Meta its best month since twenty thirteen.",
-   "show": "Scoreboard. Muse beat ChatGPT to #1 / and gave Meta its best month since 2013.",
+   "say": "First, the score. The Muse app jumped above Chat G P T, to number one. Meta stock had its best month since twenty thirteen.",
+   "show": "First, the score. / The Muse app jumped above ChatGPT to #1. / Meta stock had its best month since 2013.",
    "pause": 0.15
   },
   {

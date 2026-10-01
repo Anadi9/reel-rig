@@ -18,14 +18,15 @@ Rules we learned the hard way, and where the latest work lives. Last updated 202
 
 ## Latest work
 
-- **"Your next coworker isn't human" (AI agents v2: Grok Bot / Muse / Dots)** (no Anadi character; product marks are the cast, 57.8s, 2026-10-01):
+- **"Your next coworker isn't human" (AI agents v2: Grok Bot / Muse / Dots)** (no Anadi character; product marks are the cast + narrator bust, 62.0s, 2026-10-01):
   - video: `out/agents-v2-reel.mp4` · cover (light, bold hook): `out/agents-v2-cover.png` · project: `agents-v2/` (self-contained Remotion, own README)
   - rebuild: `./run_agents_v2_reel.sh` (`--skip-voice`, `--cover`). Script + sources: `agents-v2/script.json`.
   - beats: NBC headline hook → 49-day counter + timeline (mono logos) → Day 0 Grok Bot (lid closes, tasks tick) → Day 28 Muse/Jolly → keychain charm
     → Day 49 Dots get named → "Why cute?" robot NOPE / friend → chief-of-staff org chart, teams of Dots, Muse for Small Business, #your-team roster
     → scoreboard (Meta LEADING) → "Who wins?" comment CTA.
   - facts: Grok Bot $300 (SuperGrok Heavy) at launch → in $30 SuperGrok by Aug 26. Meta Sep: "best month since 2013" (sources disagree on %: 25/27/36, so no %).
-  - ⚠ voice is plain Piper (cloud session had no OpenVoice/HF access) — clone it on the Mac before posting.
+  - narrator: **vector character bust** bottom-left (`agents-v2/src/VectorBust.tsx`, a redraw, the rig wasn't in the cloud), lip-synced; face kept above y 1720.
+  - voice: Piper → kNN-VC in the character's voice (ref = voice-reference.wav + all shipped cloned.wav), best of N takes per line by Whisper; 62.0s.
   - ⚠ lobehub `meta-text.svg` renders "Llama", don't use it as the Meta wordmark.
 
 - **"3 giants launched the same thing" (AI agents: Grok Bot / Muse / Dots) AI-news reel** (vector v3 character + real article screenshots, 41.2s, 2026-10-01):
